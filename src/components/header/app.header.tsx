@@ -10,7 +10,6 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
@@ -19,6 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -168,6 +168,11 @@ export default function AppHeader() {
     </Menu>
   );
 
+  const router = useRouter()
+  const handleRedirectHome = () => {
+    router.push("/")
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -182,7 +187,8 @@ export default function AppHeader() {
               variant="h6"
               noWrap
               component="div"
-              sx={{ display: { xs: 'none', sm: 'block' } }}
+              sx={{ display: { xs: 'none', sm: 'block' }, cursor: "pointer" }}
+              onClick={()=> handleRedirectHome()}
             >
               SoundCloud
             </Typography>
@@ -207,7 +213,7 @@ export default function AppHeader() {
               }
             }}>
               <Link href={"/playlist"}>Playlist</Link>
-              <Link href={"/likes"}>Likes</Link>
+              <Link href={"/like"}>Likes</Link>
               <Link href={"/upload"}>Upload</Link>
               <Avatar
                 onClick={handleProfileMenuOpen}
