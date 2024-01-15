@@ -21,7 +21,7 @@ export default function AppFooter() {
         >
             <Container sx={{ display: 'flex', gap: 10 }}>
                 <AudioPlayer
-                    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+                    src={'http://localhost:8000/tracks/hoidanit.mp3'}
                     volume={0.5}
                     style={{
                         boxShadow: 'unset',
