@@ -6,7 +6,7 @@ const DetailTrackPage = ({ params }: { params: { slug: string } }) => {
 
     const searchParams = useSearchParams()
 
-    const search = searchParams.get('audio')
+    const audio = searchParams.get('audio')
 
     return (
         <div>
