@@ -64,6 +64,8 @@ const MainSlider = (props: IProp) => {
         prevArrow: <PrevArrow />,
     };
 
+    console.log(data)
+
     return (
 
         <Box
@@ -90,11 +92,11 @@ const MainSlider = (props: IProp) => {
                 {data.map(track => {
                     return (
                         <div className="track" key={track._id}>
-                            <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/images/${track.imgUrl}`} />
-                            <Link href={`/track/${track._id}`}>
+                            <Link href={`/track/${track._id}?audio=${track.trackUrl}`}>
+                                <img src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/images/${track.imgUrl}`} />
                                 <h4>{track.title}</h4>
-                                <h5>track.description</h5>
                             </Link>
+                            <h5>{track.description}</h5>
                         </div>
                     )
                 })}
