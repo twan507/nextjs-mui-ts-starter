@@ -1,5 +1,5 @@
 'use client'
-import WaveTrack from "@/components/track/wave.trac"
+import WaveTrack from "@/components/track/wave.track"
 import { useSearchParams } from "next/navigation"
 
 const DetailTrackPage = ({ params }: { params: { slug: string } }) => {
