@@ -17,7 +17,6 @@ interface IProp {
 
 const MainSlider = (props: IProp) => {
     const { data, title } = props
-    console.log(data)
 
     const NextArrow = (props: any) => {
         return (
@@ -63,8 +62,6 @@ const MainSlider = (props: IProp) => {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
     };
-
-    console.log(data)
 
     return (
 
