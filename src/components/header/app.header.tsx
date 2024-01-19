@@ -89,16 +89,7 @@ export default function AppHeader() {
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      // anchorOrigin={{
-      //   vertical: 'top',
-      //   horizontal: 'right',
-      // }}
       id={menuId}
-      // keepMounted
-      // transformOrigin={{
-      //   vertical: 'top',
-      //   horizontal: 'right',
-      // }}
       open={isMenuOpen}
       onClose={handleMenuClose}
       transformOrigin={{ horizontal: 'right', vertical: 'top' }}
@@ -133,37 +124,38 @@ export default function AppHeader() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      <MenuItem sx={{
+        "> a": {
+          color: "unset",
+          textDecoration: "unset"
+        }
+      }}>
+        <Link href={"/playlist"}>Playlist</Link>
       </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+      <MenuItem sx={{
+        "> a": {
+          color: "unset",
+          textDecoration: "unset"
+        }
+      }}>
+        <Link href={"/like"}>Like</Link>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+      <MenuItem sx={{
+        "> a": {
+          color: "unset",
+          textDecoration: "unset"
+        }
+      }}>
+        <Link href={"/upload"}>Upload</Link>
+      </MenuItem>
+      <MenuItem
+        onClick={handleProfileMenuOpen}
+        sx={{
+          "> a": {
+            color: "unset",
+            textDecoration: "unset"
+          }
+        }}>
       </MenuItem>
     </Menu>
   );
@@ -188,7 +180,7 @@ export default function AppHeader() {
               noWrap
               component="div"
               sx={{ display: { xs: 'none', sm: 'block' }, cursor: "pointer" }}
-              onClick={()=> handleRedirectHome()}
+              onClick={() => handleRedirectHome()}
             >
               SoundCloud
             </Typography>
